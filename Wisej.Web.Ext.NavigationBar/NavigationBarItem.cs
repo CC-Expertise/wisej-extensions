@@ -680,6 +680,6 @@ namespace Wisej.Web.Ext.NavigationBar
 				this.NavigationBar?.Update();
 		}
 
-		#endregion
-	}
+        #endregion
+    }
 }

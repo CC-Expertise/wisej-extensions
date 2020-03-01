@@ -134,11 +134,11 @@ namespace Wisej.Web.Ext.NavigationBar
 				{
 					this._compactView = value;
 
-					this.title.Visible = !value;
+					//this.title.Visible = !value;
 					this.userInfo.Visible = !value;
 					this.userName.Visible = !value;
 
-					if (value)
+                    if (value)
 					{
 						this._savedWidth = this.Width;
 						this._savedAvatarSize = this.avatar.Size;
@@ -170,16 +170,6 @@ namespace Wisej.Web.Ext.NavigationBar
 		{
 			get => this.logo.ImageSource;
 			set => this.logo.ImageSource = value;
-		}
-
-		/// <summary>
-		/// Returns or sets the title to display in the <see cref="NavigationBar"/>.
-		/// </summary>
-		[DefaultValue("")]
-		public override string Text
-		{
-			get => this.title.Text;
-			set => this.title.Text = value;
 		}
 
 		/// <summary>
@@ -232,10 +222,10 @@ namespace Wisej.Web.Ext.NavigationBar
 			set => this.userName.Text = value;
 		}
 
-		/// <summary>
-		/// Returns or sets the height of the child <see cref="NavigationBarItem"/> elements.
-		/// </summary>
-		[DefaultValue(45)]
+        /// <summary>
+        /// Returns or sets the height of the child <see cref="NavigationBarItem"/> elements.
+        /// </summary>
+        [DefaultValue(45)]
 		public int ItemHeight
 		{
 			get { return this._itemHeight; }
