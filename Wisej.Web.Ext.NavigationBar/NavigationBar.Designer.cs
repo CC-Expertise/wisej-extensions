@@ -29,23 +29,22 @@
 		private void InitializeComponent()
 		{
             this.user = new Wisej.Web.FlexLayoutPanel();
+            this.avatar = new Wisej.Web.PictureBox();
             this.userInfo = new Wisej.Web.FlexLayoutPanel();
             this.userName = new Wisej.Web.Label();
             this.userStatus = new Wisej.Web.FlexLayoutPanel();
-            this.userStatusColor = new Wisej.Web.Label();
             this.userStatusName = new Wisej.Web.Label();
             this.items = new Wisej.Web.FlexLayoutPanel();
             this.slideBar = new Wisej.Web.SlideBar();
             this.header = new Wisej.Web.Panel();
             this.logo = new Wisej.Web.PictureBox();
-            this.avatar = new Wisej.Web.PictureBox();
             this.user.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.userInfo.SuspendLayout();
             this.userStatus.SuspendLayout();
             this.slideBar.SuspendLayout();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // user
@@ -62,6 +61,18 @@
             this.user.TabIndex = 1;
             this.user.TabStop = true;
             this.user.Click += new System.EventHandler(this.user_Click);
+            // 
+            // avatar
+            // 
+            this.user.SetAlignY(this.avatar, Wisej.Web.VerticalAlignment.Middle);
+            this.avatar.Anonymous = true;
+            this.avatar.ImageSource = "icon-justify-fill";
+            this.avatar.Location = new System.Drawing.Point(23, 27);
+            this.avatar.MaximumSize = new System.Drawing.Size(40, 40);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(40, 40);
+            this.avatar.SizeMode = Wisej.Web.PictureBoxSizeMode.Zoom;
+            this.avatar.Click += new System.EventHandler(this.avatar_Click);
             // 
             // userInfo
             // 
@@ -86,44 +97,30 @@
             this.userName.Location = new System.Drawing.Point(0, 0);
             this.userName.Margin = new Wisej.Web.Padding(0, 0, 0, 5);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(218, 30);
+            this.userName.Size = new System.Drawing.Size(218, 29);
             this.userName.TabIndex = 1;
             this.userName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // userStatus
             // 
             this.userStatus.Anonymous = true;
-            this.userStatus.Controls.Add(this.userStatusColor);
             this.userStatus.Controls.Add(this.userStatusName);
             this.userInfo.SetFillWeight(this.userStatus, 1);
             this.userStatus.LayoutStyle = Wisej.Web.FlexLayoutStyle.Horizontal;
-            this.userStatus.Location = new System.Drawing.Point(0, 35);
+            this.userStatus.Location = new System.Drawing.Point(0, 34);
             this.userStatus.Margin = new Wisej.Web.Padding(0);
             this.userStatus.Name = "userStatus";
             this.userStatus.Size = new System.Drawing.Size(218, 30);
             this.userStatus.TabIndex = 3;
             this.userStatus.TabStop = true;
             // 
-            // userStatusColor
-            // 
-            this.userStatus.SetAlignY(this.userStatusColor, Wisej.Web.VerticalAlignment.Middle);
-            this.userStatusColor.Anonymous = true;
-            this.userStatusColor.AppearanceKey = "navbar/user-status";
-            this.userStatusColor.BackColor = System.Drawing.Color.Chartreuse;
-            this.userStatusColor.Location = new System.Drawing.Point(0, 8);
-            this.userStatusColor.Margin = new Wisej.Web.Padding(0);
-            this.userStatusColor.MaximumSize = new System.Drawing.Size(14, 14);
-            this.userStatusColor.Name = "userStatusColor";
-            this.userStatusColor.Size = new System.Drawing.Size(14, 14);
-            this.userStatusColor.TabIndex = 0;
-            // 
             // userStatusName
             // 
             this.userStatusName.Anonymous = true;
             this.userStatus.SetFillWeight(this.userStatusName, 1);
-            this.userStatusName.Location = new System.Drawing.Point(27, 3);
+            this.userStatusName.Location = new System.Drawing.Point(3, 3);
             this.userStatusName.Name = "userStatusName";
-            this.userStatusName.Size = new System.Drawing.Size(188, 24);
+            this.userStatusName.Size = new System.Drawing.Size(212, 24);
             this.userStatusName.TabIndex = 1;
             this.userStatusName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -174,17 +171,6 @@
             this.logo.Size = new System.Drawing.Size(310, 54);
             this.logo.SizeMode = Wisej.Web.PictureBoxSizeMode.CenterImage;
             // 
-            // avatar
-            // 
-            this.user.SetAlignY(this.avatar, Wisej.Web.VerticalAlignment.Middle);
-            this.avatar.Anonymous = true;
-            this.avatar.AppearanceKey = "navbar/user-avatar";
-            this.avatar.Location = new System.Drawing.Point(23, 27);
-            this.avatar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(40, 40);
-            this.avatar.SizeMode = Wisej.Web.PictureBoxSizeMode.Zoom;
-            // 
             // NavigationBar
             // 
             this.AppearanceKey = "navbar";
@@ -195,13 +181,13 @@
             this.Name = "NavigationBar";
             this.Size = new System.Drawing.Size(320, 401);
             this.user.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.userInfo.ResumeLayout(false);
             this.userStatus.ResumeLayout(false);
             this.slideBar.ResumeLayout(false);
             this.slideBar.PerformLayout();
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -209,7 +195,6 @@
 		#endregion
 
 		private FlexLayoutPanel user;
-		private Label userStatusColor;
 		protected FlexLayoutPanel items;
 		protected FlexLayoutPanel userInfo;
 		protected Label userName;

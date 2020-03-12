@@ -570,7 +570,11 @@ namespace Wisej.Web.Ext.NavigationBar
 			}
 		}
 
-		#endregion
+        #endregion
 
-	}
+        private void avatar_Click(object sender, EventArgs e)
+        {
+            CompactView = !CompactView;
+        }
+    }
 }
