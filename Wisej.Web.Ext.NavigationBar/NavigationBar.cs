@@ -141,15 +141,12 @@ namespace Wisej.Web.Ext.NavigationBar
                     if (value)
 					{
 						this._savedWidth = this.Width;
-						this._savedAvatarSize = this.avatar.Size;
 
 						this.Width = this.logo.Right + this.logo.Left;
-						this.avatar.Size = this.avatar.MaximumSize = this.logo.Size;
 					}
 					else if (this._savedWidth > 0)
 					{
 						this.Width = this._savedWidth;
-						this.avatar.Size = this.avatar.MaximumSize = this._savedAvatarSize;
 					}
 
 					OnCompactViewChanged(EventArgs.Empty);
@@ -181,28 +178,12 @@ namespace Wisej.Web.Ext.NavigationBar
 			set => this.user.Visible = value;
 		}
 
-		/// <summary>
-		/// Returns or sets the user avatar to display in the <see cref="NavigationBar"/>.
-		/// </summary>
-		[TypeConverter("Wisej.Design.ImageSourceConverter, Wisej.Framework.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171")]
-		[Editor("Wisej.Design.ImageSourceEditor, Wisej.Framework.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171", typeof(UITypeEditor))]
-		public string UserAvatar
-		{
-			get => this.avatar.ImageSource;
-			set => this.avatar.ImageSource = value;
-		}
 
 		/// <summary>
 		/// Returns or sets the user status color.
 		/// </summary>
-		[DefaultValue(typeof(Color), "")]
-		public Color UserStatusColor
-		{
-			get => this.userStatusColor.BackColor;
-			set => this.userStatusColor.BackColor = value;
-		}
 
-		/// <summary>
+        /// <summary>
 		/// Returns or sets the user status.
 		/// </summary>
 		[DefaultValue("")]

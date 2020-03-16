@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
             this.user = new Wisej.Web.FlexLayoutPanel();
-            this.avatar = new Wisej.Web.PictureBox();
             this.userInfo = new Wisej.Web.FlexLayoutPanel();
             this.userName = new Wisej.Web.Label();
             this.userStatus = new Wisej.Web.FlexLayoutPanel();
@@ -38,18 +37,18 @@
             this.slideBar = new Wisej.Web.SlideBar();
             this.header = new Wisej.Web.Panel();
             this.logo = new Wisej.Web.PictureBox();
+            this.picCompact = new Wisej.Web.PictureBox();
             this.user.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.userInfo.SuspendLayout();
             this.userStatus.SuspendLayout();
             this.slideBar.SuspendLayout();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompact)).BeginInit();
             this.SuspendLayout();
             // 
             // user
             // 
-            this.user.Controls.Add(this.avatar);
             this.user.Controls.Add(this.userInfo);
             this.user.Cursor = Wisej.Web.Cursors.Hand;
             this.user.LayoutStyle = Wisej.Web.FlexLayoutStyle.Horizontal;
@@ -62,18 +61,6 @@
             this.user.TabStop = true;
             this.user.Click += new System.EventHandler(this.user_Click);
             // 
-            // avatar
-            // 
-            this.user.SetAlignY(this.avatar, Wisej.Web.VerticalAlignment.Middle);
-            this.avatar.Anonymous = true;
-            this.avatar.ImageSource = "icon-justify-fill";
-            this.avatar.Location = new System.Drawing.Point(23, 27);
-            this.avatar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.avatar.Name = "avatar";
-            this.avatar.Size = new System.Drawing.Size(40, 40);
-            this.avatar.SizeMode = Wisej.Web.PictureBoxSizeMode.Zoom;
-            this.avatar.Click += new System.EventHandler(this.avatar_Click);
-            // 
             // userInfo
             // 
             this.userInfo.Anonymous = true;
@@ -81,9 +68,9 @@
             this.userInfo.Controls.Add(this.userStatus);
             this.user.SetFillWeight(this.userInfo, 1);
             this.userInfo.LayoutStyle = Wisej.Web.FlexLayoutStyle.Vertical;
-            this.userInfo.Location = new System.Drawing.Point(79, 15);
+            this.userInfo.Location = new System.Drawing.Point(23, 15);
             this.userInfo.Name = "userInfo";
-            this.userInfo.Size = new System.Drawing.Size(218, 64);
+            this.userInfo.Size = new System.Drawing.Size(274, 64);
             this.userInfo.Spacing = 0;
             this.userInfo.TabIndex = 1;
             this.userInfo.TabStop = true;
@@ -97,7 +84,7 @@
             this.userName.Location = new System.Drawing.Point(0, 0);
             this.userName.Margin = new Wisej.Web.Padding(0, 0, 0, 5);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(218, 29);
+            this.userName.Size = new System.Drawing.Size(274, 29);
             this.userName.TabIndex = 1;
             this.userName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -110,7 +97,7 @@
             this.userStatus.Location = new System.Drawing.Point(0, 34);
             this.userStatus.Margin = new Wisej.Web.Padding(0);
             this.userStatus.Name = "userStatus";
-            this.userStatus.Size = new System.Drawing.Size(218, 30);
+            this.userStatus.Size = new System.Drawing.Size(274, 30);
             this.userStatus.TabIndex = 3;
             this.userStatus.TabStop = true;
             // 
@@ -120,7 +107,7 @@
             this.userStatus.SetFillWeight(this.userStatusName, 1);
             this.userStatusName.Location = new System.Drawing.Point(3, 3);
             this.userStatusName.Name = "userStatusName";
-            this.userStatusName.Size = new System.Drawing.Size(212, 24);
+            this.userStatusName.Size = new System.Drawing.Size(268, 24);
             this.userStatusName.TabIndex = 1;
             this.userStatusName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -151,6 +138,7 @@
             // 
             // header
             // 
+            this.header.Controls.Add(this.picCompact);
             this.header.Controls.Add(this.logo);
             this.header.Cursor = Wisej.Web.Cursors.Hand;
             this.header.Location = new System.Drawing.Point(0, 0);
@@ -165,11 +153,22 @@
             // logo
             // 
             this.logo.Dock = Wisej.Web.DockStyle.Fill;
+            this.logo.ImageSource = "auditgen_flat.png";
             this.logo.Location = new System.Drawing.Point(5, 5);
             this.logo.Margin = new Wisej.Web.Padding(0);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(310, 54);
             this.logo.SizeMode = Wisej.Web.PictureBoxSizeMode.CenterImage;
+            // 
+            // picCompact
+            // 
+            this.picCompact.Dock = Wisej.Web.DockStyle.Right;
+            this.picCompact.ImageSource = "icon-justify-fill";
+            this.picCompact.Location = new System.Drawing.Point(259, 5);
+            this.picCompact.Margin = new Wisej.Web.Padding(0);
+            this.picCompact.Name = "picCompact";
+            this.picCompact.Size = new System.Drawing.Size(56, 54);
+            this.picCompact.SizeMode = Wisej.Web.PictureBoxSizeMode.CenterImage;
             // 
             // NavigationBar
             // 
@@ -181,13 +180,13 @@
             this.Name = "NavigationBar";
             this.Size = new System.Drawing.Size(320, 401);
             this.user.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.userInfo.ResumeLayout(false);
             this.userStatus.ResumeLayout(false);
             this.slideBar.ResumeLayout(false);
             this.slideBar.PerformLayout();
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompact)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -203,6 +202,6 @@
 		private SlideBar slideBar;
         protected Panel header;
         private PictureBox logo;
-        protected PictureBox avatar;
+        private PictureBox picCompact;
     }
 }

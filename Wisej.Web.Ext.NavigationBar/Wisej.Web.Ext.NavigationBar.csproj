@@ -96,6 +96,9 @@
   <ItemGroup>
     <EmbeddedResource Include="NavigationBar.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="auditgen_flat.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir "$(ProjectDir)..\bin"
